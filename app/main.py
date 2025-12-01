@@ -11,7 +11,7 @@ def copy_file(command: str) -> None:
     dst = parts[2]
     if src == dst:
         return None
-    if not os.path.exists(src) and not os.path.isfile(src):
+    if not os.path.isfile(src):
         return None
     with open(src, "rb") as fsrc, open(dst, "wb") as fdst:
         chunk = fsrc.read(4096)
